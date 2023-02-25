@@ -53,7 +53,7 @@
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
                         android:text="Upload Notice"
-                        android:textColor="@color/black"
+
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -91,7 +91,7 @@
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
                         android:text="Upload image"
-                        android:textColor="@color/black"
+
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -138,8 +138,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
-                        android:text="Upload EBook"
-                        android:textColor="@color/black"
+                        android:text="Monthly Magazine"
+
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -177,7 +177,7 @@
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
                         android:text="Update Faculty"
-                        android:textColor="@color/black"
+
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -225,7 +225,6 @@
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
                         android:text="Delete Notice"
-                        android:textColor="@color/black"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -263,7 +262,6 @@
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
                         android:text="Upload Papers"
-                        android:textColor="@color/black"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -310,7 +308,6 @@
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
                         android:text="Logout"
-                        android:textColor="@color/black"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -348,11 +345,11 @@
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
                         android:text="Send Notification"
-                        android:textColor="@color/black"
                         android:textStyle="bold" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
+
 
 
 
