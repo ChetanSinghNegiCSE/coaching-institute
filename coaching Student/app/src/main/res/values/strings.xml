@@ -1,3 +1,29 @@
-<resources>
-    <string name="app_name">coaching institute</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Pehli Manzil</string>
+    <string name="Heading" tools:ignore="ReferenceType">@font/poppins_bold</string>
+    <string name="Description" tools:ignore="ReferenceType">@font/hind_regular</string>
+    <string name="Dlight" tools:ignore="ReferenceType">@font/hind_light</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="start">Start</string>
+    <string name="close">Close</string>
+    <string name="CSE">Computer Science and Engineering</string>
+    <string name="AboutClg">
+
+Nanhi Pari Seemant Engineering Institute Pithoragarh ( Seemant Institute of Technology Pithoragarh) is one of the constituent institutes of Uttrakhand Technical University (UTU), Dehradun, established in 2011 by the Govt. of Uttarakhand to promote technical education in seemant areas of the state. The institute provides undergraduate education in five disciplines i.e. Computer Science &amp; Engineering, Electronics and Communication Engineering, Mechanical Engineering, Electrical Engineering, and Civil Engineering intake of 60 in each branch; fostering a spirit of state integration among the students. The vision of the institute is to produce world-class Technocrats and entrepreneurs for the benefit and upliftment of society. The Pithoragarh town is located at a height of 1645 meters above sea level. The district lies between 29.4° to 30.3° North latitude and 80° to 81° East longitude along the eastern and southern part of the central Himalayas with the Indo-Tibetan watershed divide in the north and the Kali river. Advanced Teaching Methods for the Technology Classroom presents an introduction to teaching educational technology, design, and engineering. It also contains strategies for innovation by examining the what, why, and how of technology education.
+</string>
+    <string name="AboutME"> The department has well qualified and dedicated faculty. The faculty of the department covers a wide range of Mechanical and Industrial engineering areas such as Applied Mechanics &amp; design, Dynamic &amp; Control, Thermo fluid &amp; Processes, Materials &amp; Manufacturing, Production Planning &amp; Control, Automation etc. Our graduates are working in Multinational Companies, Defence services, and Academic institutions in India and Abroad. Last but not least our technical supporting staff is unique in its way. Students, as well as visitors, find them very friendly, polite and highly intelligent.
+
+I wish all the students and faculty a great academic career. Thank you for visiting us.</string>
+    <string name="AboutCSE">In computer science you will study and apply your knowledge in understanding what computers are, as how to program them, tools to write a program, the rules when converting the written program understandable by the computers, the interface between the computer and the user, the computer graphics, computer networking, managing the software database, software engineering and testing them efficiently and more. The Department also places emphasis on all the important aspects of computers such as High speed networks, Soft Computing, Algorithm Design, Network Security, Advance database systems, Theory of computation and many more. The Department also takes initiative to improve the soft skills, analytical capabilities and verbal communication of the students so that they can face the competition in the corporate world confidently.</string>
+    <string name="about_the_app">Best coaching institute for preparation of competitive exams and for overall development of Students in Pithoragarh. Faculties have in depth knowledge of their subjects and having good teaching methodology with result oriented approach. Along with subject coverage,well designed practice sets, mock tests are also provided which will boost your preparation level up. Institute have provided very good results in last few years.. specially in defence field. Many more to come ✨ # Pehli Manzil # Faith in the name.
+</string>
+    <string-array name="theam">
+        <item>System Default</item>
+        <item>Dark</item>
+        <item>Light</item>
+    </string-array>
+    <string name="address">Link Road near Lead Bank Pithoragarh, Uttarakhand 262501 India</string>
+
 </resources>

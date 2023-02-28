@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "193043975462",
+    "firebase_url": "https://pehli-manzil-app-default-rtdb.firebaseio.com",
+    "project_id": "pehli-manzil-app",
+    "storage_bucket": "pehli-manzil-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193043975462:android:5e62fbf071364e593245e7",
+        "android_client_info": {
+          "package_name": "com.example.admincoaching"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193043975462-694b4p9mvjkqf7g6dttlpevnpvv860f0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASKKwaW9j1ftYJVtwBbc89T4Ibyo5j7-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193043975462-694b4p9mvjkqf7g6dttlpevnpvv860f0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193043975462:android:48466ef4e3e45d253245e7",
+        "android_client_info": {
+          "package_name": "com.example.coachinginstitute"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193043975462-694b4p9mvjkqf7g6dttlpevnpvv860f0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASKKwaW9j1ftYJVtwBbc89T4Ibyo5j7-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193043975462-694b4p9mvjkqf7g6dttlpevnpvv860f0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

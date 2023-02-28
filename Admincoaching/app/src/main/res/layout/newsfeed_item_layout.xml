@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
@@ -22,7 +24,7 @@
                 android:text="Admin Student App"
                 android:layout_marginLeft="16dp"
                 android:textSize="18sp"
-                android:textColor="@color/black"/>
+                />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/deleteNoticeBtn"
@@ -41,13 +43,16 @@
             android:layout_height="wrap_content"
             android:text="Chetan Singh Negi"
             android:textSize="17sp"
-            android:textColor="@color/black"
+
             />
+
         <ImageView
             android:id="@+id/deleteNoticeImg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ad"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

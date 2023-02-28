@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/navigation_user"
+        android:title="User"
+        android:icon="@drawable/idcard"/>
+
+    <item android:id="@+id/navigation_magazine"
+        android:title="Monthly Magazines"
+        android:icon="@drawable/book"/>
+
+    <item android:id="@+id/navigation_paper"
+        android:title="Papers"
+        android:icon="@drawable/ic_exam"/>
+
+    <item android:id="@+id/navigation_color"
+        android:title="Color"
+        android:icon="@drawable/ic_colors"/>
+
+    <item android:id="@+id/navigation_share"
+        android:title="Share"
+        android:icon="@drawable/ic_share" />
+
+    <item android:id="@+id/navigation_rate"
+        android:title="Rate us"
+        android:icon="@drawable/ic_star"/>
+
+    <item android:id="@+id/navigation_developer"
+        android:title="Developer"
+        android:icon="@drawable/developer"/>
+</menu>

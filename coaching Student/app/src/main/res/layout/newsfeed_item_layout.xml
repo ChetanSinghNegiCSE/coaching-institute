@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+             <de.hdodenhof.circleimageview.CircleImageView
+                 android:layout_width="36dp"
+                 android:layout_height="36dp"
+                 android:src="@drawable/notice"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_margin="4dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Student App User"
+
+                android:textSize="18sp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date : "
+                    android:fontFamily="@font/hind_light"
+                    android:textSize="@dimen/text_size0"
+                    />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="21/11/2022"
+                    android:fontFamily="@font/hind_light"
+                    android:textSize="@dimen/text_size0"
+                     />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time : "
+                    android:layout_marginLeft="@dimen/text_margin"
+                    android:fontFamily="@font/hind_light"
+                    android:textSize="@dimen/text_size0"
+                     />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10:10"
+                    android:fontFamily="@font/hind_light"
+                    android:textSize="@dimen/text_size0"
+                     />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/NoticeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/text_margin"
+            android:text="Chetan Singh Negi"
+            android:textSize="17sp"
+            />
+        <ImageView
+            android:id="@+id/NoticeImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"/>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

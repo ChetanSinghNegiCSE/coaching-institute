@@ -57,7 +57,7 @@ public class UploadPapers extends AppCompatActivity {
     private TextView paperTextView; // pdfTextView;
     private String pdfName, Title;
 
-   
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
