@@ -34,13 +34,13 @@ import java.io.IOException;
 
 public class UploadImage extends AppCompatActivity {
 
-    private Spinner imageCategory;
+//    private Spinner imageCategory;
     private CardView selectImage;
     private Button uploadImage;
     private ImageView galleryImageView;
 
 
-    private String category;
+    /*private String category;*/
     private final int REQ =1;
     private Bitmap bitmap;
     ProgressDialog pd;
@@ -54,7 +54,7 @@ public class UploadImage extends AppCompatActivity {
         setContentView(R.layout.activity_upload_image);
 
         selectImage = findViewById(R.id.addGalleryImage);
-        imageCategory = findViewById(R.id.image_category);
+//        imageCategory = findViewById(R.id.image_category);
         uploadImage = findViewById(R.id.uploadImageBtn);
         galleryImageView = findViewById(R.id.galleryImageView);
 
@@ -63,7 +63,7 @@ public class UploadImage extends AppCompatActivity {
 
         pd= new ProgressDialog(this);
 
-//Start Spinner
+/*//Start Spinner
         String[] items = new String[]{"Select Category", "General events"
                 ,"Defence","JEE","NEET","SSC","Banking","Group C(UK)"};
         imageCategory.setAdapter(new ArrayAdapter<String>(this
@@ -79,7 +79,7 @@ public class UploadImage extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        }); //end Spinner
+        }); //end Spinner*/
 
         selectImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,10 +93,10 @@ public class UploadImage extends AppCompatActivity {
             public void onClick(View v) {
                 if(bitmap == null)
                 {
-                    Toast.makeText(UploadImage.this, "Please upload Image", Toast.LENGTH_SHORT).show();
-                }else  if(category.equals("Select Category")){
+                    Toast.makeText(UploadImage.this, "Please Select Image", Toast.LENGTH_SHORT).show();
+                }/*else  if(category.equals("Select Category")){
                     Toast.makeText(UploadImage.this, "Please Select Image Category", Toast.LENGTH_SHORT).show();
-                }else {
+                }*/else {
                     pd.setMessage("Uploading...");
                     pd.show();
                     uploadImage();
@@ -143,7 +143,7 @@ public class UploadImage extends AppCompatActivity {
     }
 
     private void uploadData() {
-        reference = reference.child(category);
+        /*reference = reference.child(category);*/
         final String uniqueKey = reference.push().getKey();
 
         reference.child(uniqueKey).setValue(downloadUrl).addOnSuccessListener(new OnSuccessListener<Void>() {

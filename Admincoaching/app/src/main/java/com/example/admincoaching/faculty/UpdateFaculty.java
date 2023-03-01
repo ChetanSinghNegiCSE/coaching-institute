@@ -31,7 +31,7 @@ public class UpdateFaculty extends AppCompatActivity { //need to implement pd
     private DatabaseReference reference,dbRef;
     private TeacherAdepter adepter;
 
-    private ProgressDialog pd; //need to implement
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,6 @@ public class UpdateFaculty extends AppCompatActivity { //need to implement pd
         bakingTeacher = findViewById(R.id.bankingTeachers);
         groupC=findViewById(R.id.groupC);
 
-        pd= new ProgressDialog(this);
 
         jeeNoData = findViewById(R.id.jeeNoData);
         neetNodata = findViewById(R.id.neetNoData);
