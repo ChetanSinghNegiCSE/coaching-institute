@@ -2,19 +2,27 @@ package com.example.coachinginstitute;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.coachinginstitute.magazine.MagazineActivity;
+import com.example.coachinginstitute.papers.PaperActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Objects;
@@ -55,6 +63,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationUI.setupWithNavController(bottomNavigationView,navController);
 
+        sharedPreferences =this.getSharedPreferences("themes", Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+        switch (getCheckedItem()){
+            case 0:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                break;
+            case 1:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                break;
+            case 2:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
+        }
+
     }
 
     @Override
@@ -74,9 +97,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.navigation_magazine:
-                Toast.makeText(this, "magazine", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "magazine", Toast.LENGTH_SHORT).show();
 
-//                startActivity(new Intent(this,EbookActivity.class));
+                startActivity(new Intent(this, MagazineActivity.class));
 
                 break;
             case R.id.navigation_share:
@@ -84,13 +107,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.navigation_paper:
-                Toast.makeText(this, "Paper", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(this, PaperActivity.class));
+//                Toast.makeText(this, "Paper", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, PaperActivity.class));
                 break;
 
             case R.id.navigation_color:
-                Toast.makeText(this, "Theme", Toast.LENGTH_SHORT).show();
-//                showDialog();
+//                Toast.makeText(this, "Theme", Toast.LENGTH_SHORT).show();
+                showDialog();
                 break;
         }
         return true;
@@ -103,5 +126,70 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return true;
 
+    }
+
+    private void showDialog() {
+        String[] themes = this.getResources().getStringArray(R.array.theam);
+
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+        builder.setTitle("Select Theme");
+        builder.setSingleChoiceItems(R.array.theam, getCheckedItem(), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                selected = themes[which];
+                checkedItem =which;
+            }
+        });
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(selected == null){
+                    selected = themes[which];
+                    checkedItem=which;
+                }
+                switch (selected){
+                    case "System Default":
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                        break;
+                    case "Dark":
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                        break;
+                    case "Light":
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                        break;
+                }
+                setCheckedItem(checkedItem);
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+    }
+
+
+    private int getCheckedItem(){
+        return sharedPreferences.getInt(CHECKEDITEM,0);
+    }
+
+    private void setCheckedItem(int i){
+        editor.putInt(CHECKEDITEM,i);
+        editor.apply();
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START))
+        {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }else
+            super.onBackPressed();
     }
 }

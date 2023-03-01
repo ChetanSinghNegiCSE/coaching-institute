@@ -15,6 +15,17 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".papers.PaperActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/> <!-- set destination of actonBar back button -->
+        <activity
+            android:name=".magazine.MagazineActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/> <!-- set destination of actonBar back button -->
+        <activity
+            android:name=".magazine.PdfViewerActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.gallery.FullImageView"
             android:exported="false" />
         <activity

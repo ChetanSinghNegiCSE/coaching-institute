@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".papers.PaperActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/bookScroll"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Defence"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/title_size"
+                android:fontFamily="@font/poppins_bold"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DFD2D2"
+                android:layout_marginVertical="8dp"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ebookRecycler1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/NoData1"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <include layout="@layout/no_data_found"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="JEE"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/title_size"
+                android:fontFamily="@font/poppins_bold"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DFD2D2"
+                android:layout_marginVertical="8dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ebookRecycler2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/NoData2"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <include layout="@layout/no_data_found"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NEET"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/title_size"
+                android:fontFamily="@font/poppins_bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DFD2D2"
+                android:layout_marginVertical="8dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ebookRecycler3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/NoData3"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <include layout="@layout/no_data_found"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SSC"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/title_size"
+                android:fontFamily="@font/poppins_bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DFD2D2"
+                android:layout_marginVertical="8dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ebookRecycler4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/NoData4"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <include layout="@layout/no_data_found"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Banking"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/title_size"
+                android:fontFamily="@font/poppins_bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DFD2D2"
+                android:layout_marginVertical="8dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ebookRecycler5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/NoData5"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <include layout="@layout/no_data_found"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Group C(UK)"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/title_size"
+                android:fontFamily="@font/poppins_bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DFD2D2"
+                android:layout_marginVertical="8dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ebookRecycler6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/NoData6"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <include layout="@layout/no_data_found"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Other Exam"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/title_size"
+                android:fontFamily="@font/poppins_bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DFD2D2"
+                android:layout_marginVertical="8dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ebookRecycler7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/NoData7"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <include layout="@layout/no_data_found"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/shimmerLayout">
+
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+            <include layout="@layout/shimmer_for_ebook"/>
+        </LinearLayout>
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

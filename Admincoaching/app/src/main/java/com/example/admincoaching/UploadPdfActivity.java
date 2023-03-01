@@ -77,8 +77,7 @@ public class UploadPdfActivity extends AppCompatActivity {
         ebookCategory = findViewById(R.id.ebookCategory);
 
         //Start Spinner
-        String[] items = new String[]{"Select Category", "General"
-                ,"Defence","JEE","NEET","SSC","Banking","Group C(UK)"};
+        String[] items = new String[]{"Select Month", "January", "February", "March", "April", "May", "June", "July",  "August", "September", "October", "November",  "December"};
         ebookCategory.setAdapter(new ArrayAdapter<String>(this
                 , android.R.layout.simple_spinner_dropdown_item,items));
 
@@ -104,8 +103,8 @@ public class UploadPdfActivity extends AppCompatActivity {
                     pdfTitle.requestFocus();
                 }else if (pdfData == null){
                     Toast.makeText(UploadPdfActivity.this, "Please Select pdf", Toast.LENGTH_SHORT).show();
-                } else  if(category.equals("Select Category")){
-                    Toast.makeText(UploadPdfActivity.this, "Please Select Ebook Sem", Toast.LENGTH_SHORT).show();
+                } else  if(category.equals("Select Month")){
+                    Toast.makeText(UploadPdfActivity.this, "Please Select Month", Toast.LENGTH_SHORT).show();
                 }else {
                     uploadPdf();
 

@@ -71,7 +71,7 @@
                 android:id="@+id/pdfTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Pdf Title" />
+                android:hint="Magazine Title" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Spinner
@@ -86,7 +86,7 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Upload Pdf"
+            android:text="Upload Magazine"
             android:layout_marginTop="16dp"
             android:textAllCaps="false"
             android:id="@+id/uploadPdfBtn"
