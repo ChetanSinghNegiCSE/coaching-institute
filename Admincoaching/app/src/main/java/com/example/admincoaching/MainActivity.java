@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.example.admincoaching.faculty.UpdateFaculty;
 import com.example.admincoaching.notice.DeleteNoticeActivity;
+import com.example.admincoaching.notification.NotificationActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     CardView UploadNotice , addGalleryImage , addEbook , faculty ,deleteNotice,addPapers , logOut, notification;
@@ -89,10 +90,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
 
-            /*case R.id.notification:
-                intent=new Intent(MainActivity.this, AdminNotificationActivity.class);
+            case R.id.notification:
+                intent=new Intent(MainActivity.this, NotificationActivity.class);
                 startActivity(intent);
-                break;*/
+                break;
 
             case R.id.logOut:
                 editor.putString("isLogin","false");

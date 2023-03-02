@@ -15,6 +15,15 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".notification.NotificationActivity"
+            android:exported="false" >
+        <!--<intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>-->
+        </activity>
+        <activity
             android:name=".authentication.UserActivity"
             android:exported="false" />
         <activity
@@ -23,11 +32,8 @@
         <activity
             android:name=".authentication.LoginEmailActivity"
             android:exported="false">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+
         </activity>
         <activity
             android:name=".authentication.RegisterEmailActivity"
@@ -49,13 +55,24 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>  <!--Main-->
         </activity>
+
+        <service
+            android:name=".notification.getmessaging.FirebaseService"
+            android:permission="com.google.android.c2dm.permission.Send"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.Recieve" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>
