@@ -75,7 +75,7 @@ public class UploadPapers extends AppCompatActivity {
         paperCategory = findViewById(R.id.paperCategory);
 
         //Start Spinner
-        String[] items = new String[]{"Select Category", "General"
+        String[] items = new String[]{"Select Category"
                 ,"Defence","JEE","NEET","SSC","Banking","Group C(UK)", "Other Exam"};
         paperCategory.setAdapter(new ArrayAdapter<String>(this
                 , android.R.layout.simple_spinner_dropdown_item, items));

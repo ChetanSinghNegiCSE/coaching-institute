@@ -42,12 +42,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         notification.setOnClickListener(this);
 
 
-      /*  sharedPreferences = this.getSharedPreferences("login",MODE_PRIVATE);
+        sharedPreferences = this.getSharedPreferences("login",MODE_PRIVATE);
         editor  = sharedPreferences.edit();
 
         if(sharedPreferences.getString("isLogin","false").equals("false")){
             openLogin();
-        }*/
+        }
     }
 
     private void openLogin() {
@@ -94,11 +94,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;*/
 
-          /*  case R.id.logOut:
+            case R.id.logOut:
                 editor.putString("isLogin","false");
                 editor.commit();
                 openLogin();
-                break;*/
+                break;
         }
 
     }

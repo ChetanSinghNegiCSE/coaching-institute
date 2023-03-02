@@ -19,11 +19,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.coachinginstitute.authentication.LoginEmailActivity;
+import com.example.coachinginstitute.authentication.UserActivity;
 import com.example.coachinginstitute.magazine.MagazineActivity;
 import com.example.coachinginstitute.papers.PaperActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
@@ -39,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private int checkedItem;
     private String selected;
     private final String CHECKEDITEM = "checked_item";
-    /*private FirebaseAuth auth;*/
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         NavigationUI.setupWithNavController(bottomNavigationView,navController);
+
+        auth = FirebaseAuth.getInstance();
 
         sharedPreferences =this.getSharedPreferences("themes", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -89,8 +94,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                startActivity(new Intent(this, NotificationActivity.class));
                 break;
             case R.id.navigation_user:
-                Toast.makeText(this, "user", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(this, MainActivity2.class));
+//                Toast.makeText(this, "user", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, UserActivity.class));
+
                 break;
             case R.id.navigation_rate:
                 Toast.makeText(this, "Rate US", Toast.LENGTH_SHORT).show();
@@ -191,5 +197,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             drawerLayout.closeDrawer(GravityCompat.START);
         }else
             super.onBackPressed();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+            if(auth.getCurrentUser() == null){
+            openLogin();
+            finish();
+        }
+    }
+
+    private void openLogin() {
+
+        startActivity(new Intent(MainActivity.this, LoginEmailActivity.class));
+        finish();
+
     }
 }
