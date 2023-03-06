@@ -12,11 +12,11 @@
         tools:layout="@layout/fragment_home" />
 
 
-    <fragment
+    <!--<fragment
         android:id="@+id/navigation_about"
         android:name="com.example.coachinginstitute.ui.about.AboutFragment"
         android:label="About"
-        tools:layout="@layout/fragment_about" />
+        tools:layout="@layout/fragment_about" />-->
 
 
     <fragment
@@ -26,11 +26,11 @@
         tools:layout="@layout/fragment_notice" />
 
 
-    <fragment
+    <!--<fragment
         android:id="@+id/navigation_faculty"
         android:name="com.example.coachinginstitute.ui.faculty.FacultyFragment"
         android:label="Faculty"
-        tools:layout="@layout/fragment_faculty" />
+        tools:layout="@layout/fragment_faculty" />-->
 
 
     <fragment
@@ -38,5 +38,15 @@
         android:name="com.example.coachinginstitute.ui.gallery.GalleryFragment"
         android:label="Gallery"
         tools:layout="@layout/fragment_gallery" />
+    <fragment
+        android:id="@+id/magazineFragment"
+        android:name="com.example.coachinginstitute.ui.magazine.MagazineFragment"
+        android:label="fragment_magazine"
+        tools:layout="@layout/fragment_magazine" />
+    <fragment
+        android:id="@+id/paperFragment"
+        android:name="com.example.coachinginstitute.ui.paper.PaperFragment"
+        android:label="fragment_paper"
+        tools:layout="@layout/fragment_paper" />
 
 </navigation>

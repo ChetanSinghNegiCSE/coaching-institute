@@ -5,9 +5,16 @@
         android:title="Home"
         android:icon="@drawable/ic_home"/>
 
-    <item android:id="@id/navigation_about"
-        android:title="About"
-        android:icon="@drawable/ic_baseline_post_add_24"/>
+<!--    <item android:id="@id/navigation_about"-->
+<!--        android:title="About"-->
+<!--        android:icon="@drawable/ic_baseline_post_add_24"/>-->
+
+    <item android:id="@+id/magazineFragment"
+        android:title="Magazine"
+        android:icon="@drawable/ic_pdf"/>
+    <item android:id="@+id/paperFragment"
+        android:title="Paper"
+        android:icon="@drawable/ic_exam"/>
 
     <item android:id="@id/navigation_gallery"
         android:title="Gallery"
@@ -21,8 +28,9 @@
         android:title="Paper"
         android:icon="@drawable/exam"/>-->
 
-    <item android:id="@id/navigation_faculty"
+    <!--<item android:id="@id/navigation_faculty"
         android:title="Faculty"
-        android:icon="@drawable/ic_person"/>
+        android:icon="@drawable/ic_person"/>-->
+
 
 </menu>

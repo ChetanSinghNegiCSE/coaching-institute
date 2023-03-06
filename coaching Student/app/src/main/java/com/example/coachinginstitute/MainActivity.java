@@ -19,8 +19,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.coachinginstitute.about.AboutActivity;
 import com.example.coachinginstitute.authentication.LoginEmailActivity;
 import com.example.coachinginstitute.authentication.UserActivity;
+import com.example.coachinginstitute.faculty.FacultyActivity;
 import com.example.coachinginstitute.magazine.MagazineActivity;
 import com.example.coachinginstitute.papers.PaperActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -102,24 +104,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this, "Rate US", Toast.LENGTH_SHORT).show();
                 break;
 
-            case R.id.navigation_magazine:
+           /* case R.id.navigation_magazine:
 //                Toast.makeText(this, "magazine", Toast.LENGTH_SHORT).show();
 
                 startActivity(new Intent(this, MagazineActivity.class));
 
-                break;
+                break;*/
             case R.id.navigation_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
                 break;
 
-            case R.id.navigation_paper:
+          /*  case R.id.navigation_paper:
 //                Toast.makeText(this, "Paper", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, PaperActivity.class));
-                break;
+                break;*/
 
             case R.id.navigation_color:
 //                Toast.makeText(this, "Theme", Toast.LENGTH_SHORT).show();
                 showDialog();
+                break;
+
+            case R.id.navigation_about:
+                startActivity(new Intent(this, AboutActivity.class));
+                break;
+
+            case R.id.navigation_faculty:
+                startActivity(new Intent(this, FacultyActivity.class));
                 break;
         }
         return true;
