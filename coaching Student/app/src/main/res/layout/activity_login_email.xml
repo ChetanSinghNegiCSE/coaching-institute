@@ -126,7 +126,7 @@
                             android:layout_marginTop="12dp"
                             android:layout_height="match_parent">
 
-                            <TextView
+                            <!--<TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Not yet registered"/>
@@ -137,7 +137,7 @@
                                 android:text="Register hear"
                                 android:layout_marginLeft="8dp"
                                 android:id="@+id/openReg"
-                                android:textColor="#0048A4"/>
+                                android:textColor="#0048A4"/>-->
 
                         </LinearLayout>
 

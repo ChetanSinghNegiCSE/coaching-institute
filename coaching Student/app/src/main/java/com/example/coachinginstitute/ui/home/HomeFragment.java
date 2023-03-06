@@ -83,6 +83,8 @@ public class HomeFragment extends Fragment {
                     case 6:
                         sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/exam-app-ad313.appspot.com/o/gallery%2F%5BB%40101be9cjpg?alt=media&token=1f826f43-6711-4a58-81c8-81bd63aa953c");
                         break;
+                    case 7:
+                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/pehli-manzil-app.appspot.com/o/gallery%2F%5BB%408bbd4f2jpg?alt=media&token=e33ff792-1338-40d6-926c-502a46474083");
                 }
                 sliderViews.setImageScaleType(ImageView.ScaleType.FIT_XY);
                 sliderLayout.addSliderView(sliderViews);
