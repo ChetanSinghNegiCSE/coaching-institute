@@ -1,27 +1,24 @@
 package com.example.coachinginstitute.magazine;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.AsyncTask;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.coachinginstitute.R;
 import com.github.barteksc.pdfviewer.PDFView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.krishna.fileloader.FileLoader;
 import com.krishna.fileloader.listener.FileRequestListener;
 import com.krishna.fileloader.pojo.FileResponse;
 import com.krishna.fileloader.request.FileLoadRequest;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class PdfViewerActivity extends AppCompatActivity {
 
@@ -30,6 +27,7 @@ public class PdfViewerActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +35,24 @@ public class PdfViewerActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_pdf_viewer);
+        FloatingActionButton fab = findViewById(R.id.whatsapp_fab);
+        fab.setImageResource(R.drawable.ic_whatsappicon_foreground);
 
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phoneNumber = "+918449686269"; // Replace with the phone number of the contact you want to chat with
+                String message = "Hello, this is a message from my app!"; // Replace with the message you want to send
+                String url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + message;
+
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+            }
+        });
 
         url = getIntent().getStringExtra("pdfUrl");
+
 
         pdfView = findViewById(R.id.pdfView);
 
@@ -85,7 +98,7 @@ public class PdfViewerActivity extends AppCompatActivity {
 
     }
 
-   /* private class PdfDownloadToView extends AsyncTask<String,Void, InputStream> {
+/*    private class PdfDownloadToView extends AsyncTask<String,Void, InputStream> {
 
         @Override
         protected InputStream doInBackground(String... strings) {
@@ -97,7 +110,9 @@ public class PdfViewerActivity extends AppCompatActivity {
 
                 if(urlConnection.getResponseCode() == 200){
                     inputStream = new BufferedInputStream(urlConnection.getInputStream());
+
                 }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -105,9 +120,12 @@ public class PdfViewerActivity extends AppCompatActivity {
             return inputStream;
         }
 
+
+
         @Override
         protected void onPostExecute(InputStream inputStream) {
             pdfView.fromStream(inputStream).load();
+
         }
 
     }*/

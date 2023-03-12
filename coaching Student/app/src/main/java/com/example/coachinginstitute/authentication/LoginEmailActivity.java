@@ -109,7 +109,7 @@ public class LoginEmailActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
 
-                    reference = FirebaseDatabase.getInstance().getReference().child("User").child(auth.getCurrentUser().getUid()).child("devices");
+                    reference = FirebaseDatabase.getInstance().getReference().child("CurrentUser").child(auth.getCurrentUser().getUid()).child("devices");
                     mDeviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
                     reference.push().setValue(mDeviceId);
                     checkDeviceLimit();

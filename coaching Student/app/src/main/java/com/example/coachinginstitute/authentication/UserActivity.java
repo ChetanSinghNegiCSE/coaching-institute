@@ -28,6 +28,9 @@ public class UserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //back button in action bar
+        getSupportActionBar().setTitle("User"); //SetTitle in Action bar
+
         name = findViewById(R.id.userName);
         email = findViewById(R.id.userEmail);
         logout = findViewById(R.id.userlogout);

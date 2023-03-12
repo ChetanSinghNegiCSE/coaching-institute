@@ -41,11 +41,11 @@ public class coursesAdepter extends PagerAdapter {
             ImageView memberIcon;
             TextView memberTitle, memberDesc;
 
-            memberIcon = view.findViewById(R.id.memberIcon);
+//            memberIcon = view.findViewById(R.id.memberIcon);
             memberTitle = view.findViewById(R.id.memberTitle);
             memberDesc = view.findViewById(R.id.memberDescription);
 
-            memberIcon.setImageResource(list.get(position).getImg());
+//            memberIcon.setImageResource(list.get(position).getImg());
 
             memberTitle.setText(list.get(position).getTitle());
 

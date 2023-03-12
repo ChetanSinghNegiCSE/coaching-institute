@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.coachinginstitute.R;
 import com.smarteist.autoimageslider.DefaultSliderView;
@@ -21,6 +22,8 @@ public class HomeFragment extends Fragment {
 
     private SliderLayout sliderLayout;
     private ImageView map;
+
+    private TextView PhoneTextView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,6 +49,16 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        PhoneTextView= view.findViewById(R.id.phoneNo);
+        PhoneTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String phoneNumber = PhoneTextView.getText().toString();
+                Intent dialIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber));
+                startActivity(dialIntent);
+            }
+        });
+
         return view;
     }
 
@@ -57,35 +70,25 @@ public class HomeFragment extends Fragment {
     }
 
     private void setSliderViews() {
-            for(int i = 0 ; i<7 ; i++){
+            for(int i = 0 ; i<4 ; i++){
 
                 DefaultSliderView sliderViews = new DefaultSliderView(getContext());
 
                 switch (i){
                     case 0:
-                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/exam-app-ad313.appspot.com/o/gallery%2F%5BB%40fc16c65jpg?alt=media&token=b5f33181-4d63-4c72-b6da-cca8e576e1f7");
+                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/pehli-manzil-app.appspot.com/o/gallery%2F%5BB%40896ee91jpg?alt=media&token=9de996f5-c3bd-47fd-946b-4746f8dbe946");
                         break;
                     case 1:
-                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/exam-app-ad313.appspot.com/o/gallery%2F%5BB%40f6ba303jpg?alt=media&token=5a281048-4c18-4f8b-802d-e0d41ec97a19");
+                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/pehli-manzil-app.appspot.com/o/gallery%2F%5BB%408119804jpg?alt=media&token=531de711-d576-4b99-9fd1-acdd4f03eaac");
                         break;
                     case 2:
-                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/exam-app-ad313.appspot.com/o/gallery%2F%5BB%40787fejpg?alt=media&token=a265c6a9-cb09-402b-8e60-ba5eb72fbf22");
+                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/pehli-manzil-app.appspot.com/o/gallery%2F%5BB%401588a82jpg?alt=media&token=c771febc-5f8d-40ab-8179-135cb87cf457");
                         break;
                     case 3:
-                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/exam-app-ad313.appspot.com/o/gallery%2F%5BB%40d4f72fejpg?alt=media&token=f42b45bf-8aec-43b0-a2b4-447eeddc2e4a");
+                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/pehli-manzil-app.appspot.com/o/gallery%2F%5BB%40b47f01jpg?alt=media&token=826dc95d-7dee-4a74-a35a-3d82d7484f53");
                         break;
-                    case 4:
-                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/exam-app-ad313.appspot.com/o/gallery%2F%5BB%40826995fjpg?alt=media&token=91dac760-89ab-470d-8f16-bcb14cd5f5ad");
-                        break;
-                    case 5:
-                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/exam-app-ad313.appspot.com/o/gallery%2F%5BB%40367710djpg?alt=media&token=c0369867-fde5-472e-90d4-e0cece4538d2");
-                        break;
-                    case 6:
-                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/exam-app-ad313.appspot.com/o/gallery%2F%5BB%40101be9cjpg?alt=media&token=1f826f43-6711-4a58-81c8-81bd63aa953c");
-                        break;
-                    case 7:
-                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/pehli-manzil-app.appspot.com/o/gallery%2F%5BB%408bbd4f2jpg?alt=media&token=e33ff792-1338-40d6-926c-502a46474083");
-                }
+
+                    }
                 sliderViews.setImageScaleType(ImageView.ScaleType.FIT_XY);
                 sliderLayout.addSliderView(sliderViews);
             }

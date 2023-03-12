@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addPapers.setOnClickListener(this);
         logOut=findViewById(R.id.logOut);
         logOut.setOnClickListener(this);
-        notification=findViewById(R.id.notification);
-        notification.setOnClickListener(this);
+        /*notification=findViewById(R.id.notification);*/
+        /*notification.setOnClickListener(this);*/
 
 
         sharedPreferences = this.getSharedPreferences("login",MODE_PRIVATE);
@@ -90,10 +90,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
 
-            case R.id.notification:
+           /* case R.id.notification:
                 intent=new Intent(MainActivity.this, NotificationActivity.class);
                 startActivity(intent);
-                break;
+                break;*/
 
             case R.id.logOut:
                 editor.putString("isLogin","false");

@@ -42,7 +42,7 @@ public class UploadNotice extends AppCompatActivity {
 
     private ImageView noticeImageView;
 
-    private EditText noticeTitle;
+    private EditText noticeTitle,noticeBody;
 
     private Button uploadNoticeBtn;
     private DatabaseReference reference, dbRef;
@@ -63,6 +63,7 @@ public class UploadNotice extends AppCompatActivity {
         addImage =findViewById(R.id.addImage);
         noticeImageView = findViewById(R.id.noticeImageView);
         noticeTitle = findViewById(R.id.noticeTitle);
+        noticeBody = findViewById(R.id.noticeBody);
         uploadNoticeBtn = findViewById(R.id.uploadNoticeBtn);
         addImage.setOnClickListener(view -> openGallery());
         uploadNoticeBtn.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +74,7 @@ public class UploadNotice extends AppCompatActivity {
                     noticeTitle.requestFocus();
                 }else if(bitmap == null){
                     uploadData();
+
                 }else {
                     uploadImage();
 
@@ -128,6 +130,7 @@ public class UploadNotice extends AppCompatActivity {
         final String uniqueKey = dbRef.push().getKey();
 
         String title = noticeTitle.getText().toString();
+        String body = noticeBody.getText().toString();
 
         Calendar calForDate = Calendar.getInstance();
         SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yy");
@@ -137,7 +140,7 @@ public class UploadNotice extends AppCompatActivity {
         SimpleDateFormat currentTime = new SimpleDateFormat("hh:mm a");
         String time = currentTime.format(calForTime.getTime());
 
-        NoticeData noticeData = new NoticeData(title,downloadUrl,date,time,uniqueKey);
+        NoticeData noticeData = new NoticeData(title,body,downloadUrl,date,time,uniqueKey);
 
         dbRef.child(uniqueKey).setValue(noticeData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

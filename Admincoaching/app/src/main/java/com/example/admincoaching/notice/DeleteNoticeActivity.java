@@ -57,6 +57,7 @@ public class DeleteNoticeActivity extends AppCompatActivity {
                 adepter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
 
+
                 deleteNoticeRecyclerView.setAdapter(adepter);
             }
 

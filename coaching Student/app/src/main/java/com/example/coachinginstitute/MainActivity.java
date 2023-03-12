@@ -24,6 +24,7 @@ import com.example.coachinginstitute.authentication.LoginEmailActivity;
 import com.example.coachinginstitute.authentication.UserActivity;
 import com.example.coachinginstitute.faculty.FacultyActivity;
 import com.example.coachinginstitute.magazine.MagazineActivity;
+import com.example.coachinginstitute.notification.NotificationActivity;
 import com.example.coachinginstitute.papers.PaperActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -92,32 +93,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId())
         {
             case R.id.navigation_developer:
-                Toast.makeText(this, "dev", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(this, NotificationActivity.class));
+//                Toast.makeText(this, "dev", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, NotificationActivity.class));
                 break;
             case R.id.navigation_user:
 //                Toast.makeText(this, "user", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, UserActivity.class));
 
                 break;
-            case R.id.navigation_rate:
+          /*  case R.id.navigation_rate:
                 Toast.makeText(this, "Rate US", Toast.LENGTH_SHORT).show();
                 break;
 
-           /* case R.id.navigation_magazine:
-//                Toast.makeText(this, "magazine", Toast.LENGTH_SHORT).show();
 
-                startActivity(new Intent(this, MagazineActivity.class));
-
-                break;*/
             case R.id.navigation_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
-                break;
-
-          /*  case R.id.navigation_paper:
-//                Toast.makeText(this, "Paper", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, PaperActivity.class));
                 break;*/
+
 
             case R.id.navigation_color:
 //                Toast.makeText(this, "Theme", Toast.LENGTH_SHORT).show();

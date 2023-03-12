@@ -73,5 +73,11 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'      //for notification
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
+    implementation 'com.huangyz0918:androidwm:0.2.3'
+    implementation 'com.huangyz0918:androidwm-light:0.1.2'
+
+
+
+
 
 }

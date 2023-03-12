@@ -49,10 +49,13 @@ public class NoticeAdepter extends RecyclerView.Adapter<NoticeAdepter.NoticeView
         NoticeData currentItem = list.get(position);
 
         holder.deletedNoticeTitle.setText(currentItem.getTitle());
+        holder.deletedNoticeBody.setText(currentItem.getBody());
+
 
         try {
             if (currentItem.getImage() != null)
                 Picasso.get().load(currentItem.getImage()).into(holder.deleteNoticeImg);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -104,6 +107,10 @@ public class NoticeAdepter extends RecyclerView.Adapter<NoticeAdepter.NoticeView
                     dialog.show();
             }
         });
+
+        if(holder.deleteNoticeImg==null){
+            holder.deleteNoticeImg.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -113,14 +120,18 @@ public class NoticeAdepter extends RecyclerView.Adapter<NoticeAdepter.NoticeView
 
     public class NoticeViewAdepter extends RecyclerView.ViewHolder {
         private Button deleteNoticeBtn;
-        private TextView deletedNoticeTitle;
+        private TextView deletedNoticeTitle,deletedNoticeBody;
         private ImageView deleteNoticeImg;
 
         public NoticeViewAdepter(@NonNull View itemView) {
             super(itemView);
             deleteNoticeBtn = itemView.findViewById(R.id.deleteNoticeBtn);
             deletedNoticeTitle = itemView.findViewById(R.id.deleteNoticeTitle);
+            deletedNoticeBody = itemView.findViewById(R.id.deleteNoticeBody);
             deleteNoticeImg = itemView.findViewById(R.id.deleteNoticeImg);
+
+
+
 
         }
     }

@@ -18,7 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="671dp"
             android:layout_marginVertical="8dp"
-            android:scaleType="fitXY">
+            android:scaleType="fitXY"
+            >
 
             <ProgressBar
                 android:id="@+id/progressBar"

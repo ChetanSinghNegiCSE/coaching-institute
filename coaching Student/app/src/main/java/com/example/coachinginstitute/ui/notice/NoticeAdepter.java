@@ -43,6 +43,7 @@ public class NoticeAdepter extends RecyclerView.Adapter<NoticeAdepter.NoticeView
         NoticeData currentItem = list.get(position);
 
         holder.NoticeTitle.setText(currentItem.getTitle());
+        holder.NoticeBody.setText(currentItem.getBody());
         holder.date.setText(currentItem.getDate());
         holder.time.setText(currentItem.getTime());
 
@@ -70,13 +71,14 @@ public class NoticeAdepter extends RecyclerView.Adapter<NoticeAdepter.NoticeView
     }
 
     public class NoticeViewAdepter extends RecyclerView.ViewHolder {
-        private TextView NoticeTitle, date, time;
+        private TextView  NoticeTitle,NoticeBody,date, time;
         private ImageView NoticeImg;
 
         public NoticeViewAdepter(@NonNull View itemView) {
             super(itemView);
 
             NoticeTitle = itemView.findViewById(R.id.NoticeTitle);
+            NoticeBody = itemView.findViewById(R.id.NoticeBody);
             NoticeImg = itemView.findViewById(R.id.NoticeImg);
             date = itemView.findViewById(R.id.date);
             time = itemView.findViewById(R.id.time);

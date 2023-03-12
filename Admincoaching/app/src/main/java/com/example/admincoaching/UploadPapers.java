@@ -32,6 +32,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.HashMap;
 
 import retrofit2.Call;
@@ -56,6 +58,7 @@ public class UploadPapers extends AppCompatActivity {
     private ProgressDialog pd;
     private TextView paperTextView; // pdfTextView;
     private String pdfName, Title;
+    private String decodedFileName;
 
 
     @Override
@@ -116,7 +119,7 @@ public class UploadPapers extends AppCompatActivity {
         pd.setTitle("Please Wait...");
         pd.setMessage("Uploading paper");
         pd.show();
-        StorageReference reference = storageReference.child("Previous Year Papers /" + pdfName + "-" + System.currentTimeMillis() + ".pdf");
+        StorageReference reference = storageReference.child("Previous Year Papers /" + decodedFileName + "-" + System.currentTimeMillis() + ".pdf");
         reference.putFile(paperData)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -209,6 +212,11 @@ public class UploadPapers extends AppCompatActivity {
 
             } else if (paperData.toString().startsWith("file://")) {
                 pdfName = new File(paperData.toString()).getName();
+                try {
+                     decodedFileName = URLDecoder.decode(pdfName, "UTF-8");
+                } catch (UnsupportedEncodingException e) {
+                    throw new RuntimeException(e);
+                }
             }
 
             paperTextView.setText(pdfName);

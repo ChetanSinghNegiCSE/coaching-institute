@@ -16,8 +16,32 @@ A place which gives wings to your dreams💫 Pehli Manzil has given a platform t
 
 I wish all the students and faculty a great academic career. Thank you for visiting us.</string>
     <string name="AboutCSE">In computer science you will study and apply your knowledge in understanding what computers are, as how to program them, tools to write a program, the rules when converting the written program understandable by the computers, the interface between the computer and the user, the computer graphics, computer networking, managing the software database, software engineering and testing them efficiently and more. The Department also places emphasis on all the important aspects of computers such as High speed networks, Soft Computing, Algorithm Design, Network Security, Advance database systems, Theory of computation and many more. The Department also takes initiative to improve the soft skills, analytical capabilities and verbal communication of the students so that they can face the competition in the corporate world confidently.</string>
-    <string name="about_the_app">Best coaching institute for preparation of competitive exams and for overall development of Students in Pithoragarh. Faculties have in depth knowledge of their subjects and having good teaching methodology with result oriented approach. Along with subject coverage,well designed practice sets, mock tests are also provided which will boost your preparation level up. Institute have provided very good results in last few years.. specially in defence field. Many more to come ✨ # Pehli Manzil # Faith in the name.
-</string>
+
+    <string name="about_us">Pehli Manzil is an educational institute located in Pithoragarh,Uttarakhand. The institute was founded in 2017 with the goal of providing high-quality education to students in the region,especially those from underprivileged backgrounds who may not have had access to such opportunities otherwise.
+
+    Pehli Manzil offers a range of educational programs, including foundation courses (9-12), competitive exam courses.The institute\'s curriculum is designed to provide students with a well-rounded education that includes not only subjects,but also life skills, social awareness and personality development.
+
+    One of the unique features of Pehli Manzil is its focus on experiential learning.Students are encouraged to engage in hands-on activities and projects that allow them to apply their knowledge and skills in real-world settings.This approach helps to foster creativity, problem-solving and critical thinking skills,which are essential for success in today\'s rapidly changing world.
+
+    Pehli Manzil also places a strong emphasis on community engagement and service. Students are encouraged to get involved in community projects and initiatives,such as environmental conservation, health and hygiene awareness and social justice issues.This not only benefits the community, but also helps students to develop a sense of social responsibility and civic engagement.
+
+    Overall,Pehli Manzil is a well-respected educational institute that is making a significant impact on the lives of students in the Pithoragarh region.Its focus on providing high-quality education,experiential learning, and community engagement is helping to prepare students for success in their personal and professional lives and contributing to the development of a stronger and more prosperous society.</string>
+
+    <string name="welcome_message">Welcome to Pehli Manzil! We\'re thrilled to have you here and hope that you\'ll find everything you need to support your educational journey.
+
+    At Pehli Manzil,we\'re committed to helping you achieve your goals through the expert guidance.Our institute covers a wide range of courses, from Academic(9-12),NEET,Defence,Banking,SSC,Uttarakhand exams etc.We\'re constantly updating our resources to ensure that you have access to the latest information and insights.
+
+    We believe that one should \'deserve before desiring\' and we\'re dedicated to providing you with the best possible experience.We\'re here to support you in every step of the way.
+
+    So take a look around,explore our courses and don\'t hesitate to reach out if you have any questions or suggestions.Thank you for choosing Pehli Manzil.We can\'t wait to help you succeed!
+
+    Best regards,
+    Pehli Manzil</string>
+
+ <string name="Defence">Number speaks for us.Over our 5 year\'s short journey we are proud to say that we have given the most number of officers in defence forces in whole state,apart from that our students are also serving as soldiers in different defence forces.</string>
+    <string name="Bank">The course you can bank upon,with experienced faculty we are giving regular results in this course.Our students are working as clerks and PO in different banks all over the country.</string>
+    <string name="neet">The exam for which the aspirants of our city used to leave their home.Its result oriented guidance is now available in our city.With experienced faculty having years of experience.</string>
+    <string name="Uttarakhand">The best place to headstart your journey of becoming a government official in Uttarakhand.Our faculties are the best available faculty in Uttarakhand whose guidance have already given hundreds of results in the state level exams</string>
     <string-array name="theam">
         <item>System Default</item>
         <item>Dark</item>

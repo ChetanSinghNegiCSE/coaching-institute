@@ -24,13 +24,13 @@
         android:title="Color"
         android:icon="@drawable/ic_colors"/>
 
-    <item android:id="@+id/navigation_share"
+<!--    <item android:id="@+id/navigation_share"
         android:title="Share"
         android:icon="@drawable/ic_share" />
 
     <item android:id="@+id/navigation_rate"
         android:title="Rate us"
-        android:icon="@drawable/ic_star"/>
+        android:icon="@drawable/ic_star"/>-->
 
     <item android:id="@+id/navigation_developer"
         android:title="Developer"

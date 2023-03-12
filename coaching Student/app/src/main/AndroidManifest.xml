@@ -9,20 +9,33 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_icon_foreground"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".splash"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".faculty.FacultyActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" /> <!-- set destination of actonBar back button -->
         <activity
             android:name=".about.AboutActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" /> <!-- set destination of actonBar back button -->
         <activity
             android:name=".notification.NotificationActivity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".MainActivity"> <!-- set destination of actonBar back button -->
+
 
             <!--
         <intent-filter>
@@ -34,7 +47,8 @@
         </activity>
         <activity
             android:name=".authentication.UserActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" /> <!-- set destination of actonBar back button -->
         <activity
             android:name=".authentication.ForgetPassActivity"
             android:exported="false" />
@@ -46,8 +60,7 @@
             android:exported="true" />
         <activity
             android:name=".papers.PaperActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" /> <!-- set destination of actonBar back button -->
+            android:exported="false" />
         <activity
             android:name=".magazine.MagazineActivity"
             android:exported="false"
@@ -60,12 +73,12 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
+            android:exported="false">
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter> <!-- Main -->
+            </intent-filter>--> <!-- Main -->
         </activity>
 
         <service

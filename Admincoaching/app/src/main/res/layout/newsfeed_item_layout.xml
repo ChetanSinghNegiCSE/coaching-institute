@@ -42,6 +42,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chetan Singh Negi"
+            android:textStyle="bold"
+            android:textSize="17sp"
+
+            />
+
+        <TextView
+            android:id="@+id/deleteNoticeBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chetan Singh Negi is the developer"
             android:textSize="17sp"
 
             />
@@ -49,10 +59,9 @@
         <ImageView
             android:id="@+id/deleteNoticeImg"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/ad"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            android:layout_height="250dp"
+            android:scaleType="fitCenter"
+             />
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

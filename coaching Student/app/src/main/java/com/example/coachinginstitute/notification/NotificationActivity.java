@@ -29,6 +29,9 @@ public class NotificationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //back button in action bar
+        getSupportActionBar().setTitle("Developer"); //SetTitle in Action bar
+
         button =findViewById(R.id.button3);
         title = findViewById(R.id.titleNoti);
         message =findViewById(R.id.messageNoti);

@@ -1,13 +1,14 @@
 package com.example.coachinginstitute.ui.notice;
 
 public class NoticeData {
-    String title, image , date , time ,key;
+    String title,body, image , date , time ,key;
 
     public NoticeData() {
     }
 
-    public NoticeData(String title, String image, String date, String time, String key) {
+    public NoticeData(String title,String body, String image, String date, String time, String key) {
         this.title = title;
+        this.body = body;
         this.image = image;
         this.date = date;
         this.time = time;
@@ -20,6 +21,14 @@ public class NoticeData {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
     }
 
     public String getImage() {

@@ -36,6 +36,9 @@ public class FacultyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faculty);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //back button in action bar
+        getSupportActionBar().setTitle("Faculty"); //SetTitle in Action bar
+
         jeeTeacher = findViewById(R.id.jeeTeachers);
         neetTeacher = findViewById(R.id.neetTeachers);
         defenceTeacher = findViewById(R.id.defenceTeachers);
