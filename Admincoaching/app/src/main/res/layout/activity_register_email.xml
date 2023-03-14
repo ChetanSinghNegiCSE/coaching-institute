@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".authentication.ForgetPassActivity">
-
+    tools:context=".authentication.RegisterEmailActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,10 +30,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Student Buddy"
+                        android:text="Request for "
                         android:textColor="@color/white"
                         android:textSize="22sp"
-                        android:fontFamily="@font/hind_regular"
                         android:textStyle="bold"
                         android:layout_marginTop="-5dp"
                         android:layout_gravity="center_horizontal"/>
@@ -45,19 +43,18 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Friend of Student"
+                        android:text="Admin Access"
                         android:textColor="@color/white"
                         android:textSize="25dp"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold"
-                        android:fontFamily="@font/hind_regular"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center"/>
 
                     <View
                         android:layout_width="80dp"
                         android:layout_height="4dp"
-                        android:background="@color/grey2"
+                        android:background="@color/lightGray"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="22dp"/>
 
@@ -83,14 +80,28 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Forget Password"
+                            android:text="Register"
                             android:textSize="22dp"
                             android:textStyle="bold"
                             android:layout_gravity="center_horizontal"
+                            android:textColor="@color/black"
                             android:layout_margin="16dp"
                             />
 
 
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Name"
+                                android:inputType="text"
+                                android:id="@+id/registerName"/>
+                        </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -103,9 +114,22 @@
                                 android:layout_height="wrap_content"
                                 android:hint="Email"
                                 android:inputType="textEmailAddress"
-                                android:id="@+id/ForgotEmail"/>
+                                android:id="@+id/registerEmail"/>
                         </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="12dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:passwordToggleEnabled="true">
 
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Password"
+                                android:inputType="textPassword"
+                                android:id="@+id/registerPass"/>
+                        </com.google.android.material.textfield.TextInputLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -115,18 +139,17 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Back to Login"/>
+                                android:text="Already registered"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Login"
+                                android:text="Login hear"
                                 android:layout_marginLeft="8dp"
-                                android:id="@+id/backLogin"
+                                android:id="@+id/openLog"
                                 android:textColor="#0048A4"/>
 
                         </LinearLayout>
-
 
                     </LinearLayout>
 
@@ -135,8 +158,8 @@
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Forget Password"
-                    android:id="@+id/forgetBtn"
+                    android:text="Register"
+                    android:id="@+id/register"
                     android:layout_marginHorizontal="24dp"/>
 
 
@@ -144,5 +167,4 @@
         </ScrollView>
 
     </RelativeLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

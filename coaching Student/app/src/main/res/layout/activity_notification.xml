@@ -296,7 +296,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="info@prarambhinfotech.com
-                        +(91) 7417152393     05964-264100"
+                        +(91) 7417152393     05964-359338"
             android:layout_marginTop="@dimen/text_margin"
             android:layout_marginHorizontal="@dimen/text_margin"
             android:textSize="@dimen/text_size3"

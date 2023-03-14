@@ -1,8 +1,9 @@
-package com.example.coachinginstitute.authentication;
+package com.example.admincoaching.authentication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -14,8 +15,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.coachinginstitute.MainActivity;
-import com.example.coachinginstitute.R;
+import com.example.admincoaching.MainActivity;
+import com.example.admincoaching.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -28,13 +29,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 public class LoginEmailActivity extends AppCompatActivity {
+
     private TextView openReg ,openForget;
     private EditText loginEmail ,loginPass;
     private Button loginBtn;
     private String email, password;
     private FirebaseAuth auth;
-
+    private ImageView googleAuth,phoneAuth;
     private DatabaseReference dbRef;
     private DatabaseReference reference;
     private static final int MAX_DEVICES = 1;
@@ -46,23 +50,20 @@ public class LoginEmailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_email);
-
-
-//        openReg =findViewById(R.id.openReg);
+        openReg =findViewById(R.id.openReg);
         loginEmail =findViewById(R.id.loginEmail);
         loginPass =findViewById(R.id.loginPass);
         loginBtn =findViewById(R.id.loginBtn);
-        openForget =findViewById(R.id.openForget);
+        auth = FirebaseAuth.getInstance();
 
         progressBar = findViewById(R.id.progressBar);
 
-        auth = FirebaseAuth.getInstance();
-        /*openReg.setOnClickListener(new View.OnClickListener() {
+        openReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openRegister();
             }
-        });*/
+        });
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,23 +71,8 @@ public class LoginEmailActivity extends AppCompatActivity {
                 validateData();
             }
         });
-
-        openForget.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openForgetPassword();
-            }
-        });
-
-
-
-
     }
 
-    private void openForgetPassword() {
-        startActivity(new Intent(LoginEmailActivity.this,ForgetPassActivity.class));
-
-    }
     private void validateData() {
         email = loginEmail.getText().toString();
         password = loginPass.getText().toString();
@@ -105,24 +91,23 @@ public class LoginEmailActivity extends AppCompatActivity {
 
     private void loginUser() {
         auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @SuppressLint("HardwareIds")
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-
-                    reference = FirebaseDatabase.getInstance().getReference().child("CurrentUser").child(auth.getCurrentUser().getUid()).child("devices");
+                /*FirebaseUser user = auth.getCurrentUser();
+                checkIfUserIsLoggedIn(user);*/
+                    /* user.put("status","no");*/
+                    reference = FirebaseDatabase.getInstance().getReference().child("User").child(auth.getCurrentUser().getUid()).child("devices");
                     mDeviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
                     reference.push().setValue(mDeviceId);
                     checkDeviceLimit();
 
 
-
-
+                    //openMain();
                 }else {
-
-
-
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(LoginEmailActivity.this, "Error"+ task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginEmailActivity.this, "Error"+ Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -143,10 +128,9 @@ public class LoginEmailActivity extends AppCompatActivity {
                     // Limit exceeded, sign out the user and display an error message
                     auth.signOut();
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(LoginEmailActivity.this, "Maximum number of devices reached login Again.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginEmailActivity.this, "Maximum number of devices reached.", Toast.LENGTH_SHORT).show();
                 }else {
                     openMain();
-
                 }
             }
 
@@ -183,25 +167,16 @@ public class LoginEmailActivity extends AppCompatActivity {
 
 
 
+
     private void openMain() {
-        startActivity(new Intent(LoginEmailActivity.this, MainActivity.class));
         progressBar.setVisibility(View.GONE);
+        startActivity(new Intent(LoginEmailActivity.this, MainActivity.class));
         finish();
 
     }
 
-   /* private void openRegister() {
+    private void openRegister() {
         startActivity(new Intent(LoginEmailActivity.this,RegisterEmailActivity.class));
         finish();
-    }*/
-
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        finish();
-        System.exit(0);
     }
 }

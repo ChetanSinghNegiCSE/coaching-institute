@@ -79,13 +79,13 @@ public class HomeFragment extends Fragment {
                         sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/pehli-manzil-app.appspot.com/o/gallery%2F%5BB%40896ee91jpg?alt=media&token=9de996f5-c3bd-47fd-946b-4746f8dbe946");
                         break;
                     case 1:
-                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/pehli-manzil-app.appspot.com/o/gallery%2F%5BB%408119804jpg?alt=media&token=531de711-d576-4b99-9fd1-acdd4f03eaac");
+                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/pehli-manzil-app.appspot.com/o/gallery%2F%5BB%4087bba29jpg?alt=media&token=fae71eda-0826-4d20-908b-befb52b08b93");
                         break;
                     case 2:
-                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/pehli-manzil-app.appspot.com/o/gallery%2F%5BB%401588a82jpg?alt=media&token=c771febc-5f8d-40ab-8179-135cb87cf457");
+                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/pehli-manzil-app.appspot.com/o/gallery%2F%5BB%402d3dc6bjpg?alt=media&token=c8b8483d-e745-409c-8e17-f20497ea18cf");
                         break;
                     case 3:
-                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/pehli-manzil-app.appspot.com/o/gallery%2F%5BB%40b47f01jpg?alt=media&token=826dc95d-7dee-4a74-a35a-3d82d7484f53");
+                        sliderViews.setImageUrl("https://firebasestorage.googleapis.com/v0/b/pehli-manzil-app.appspot.com/o/gallery%2F%5BB%407017a5fjpg?alt=media&token=4278c643-8158-458b-96ab-055843459309");
                         break;
 
                     }
