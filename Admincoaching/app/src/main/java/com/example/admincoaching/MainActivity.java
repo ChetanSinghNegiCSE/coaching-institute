@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.admincoaching.authentication.LoginEmailActivity;
+import com.example.admincoaching.authentication.PendingActivity;
+import com.example.admincoaching.authentication.UserActivity;
 import com.example.admincoaching.faculty.UpdateFaculty;
 import com.example.admincoaching.notice.DeleteNoticeActivity;
 import com.example.admincoaching.notification.NotificationActivity;
@@ -70,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }*/
 
         /*yesNO();*/
+
     }
 
     private void yesNO() {
@@ -102,7 +105,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else if (status.equals("no")) {
                         // Redirect the user to a "pending approval" screen
                         Toast.makeText(MainActivity.this, "you are Not a verified user", Toast.LENGTH_SHORT).show();
-                        openLogin();
+                        /*openLogin();*/
+                        auth.signOut();
+                        startActivity(new Intent(MainActivity.this, PendingActivity.class));
+                        finish();
 
                     } else {
                         // Display an error message and log the user out
@@ -159,15 +165,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
 
-           /* case R.id.notification:
-                intent=new Intent(MainActivity.this, NotificationActivity.class);
-                startActivity(intent);
-                break;*/
 
             case R.id.logOut:
-                /*editor.putString("isLogin","false");
-                editor.commit();*/
-                openLogin();
+
+                /*openLogin();*/
+                startActivity(new Intent(MainActivity.this, UserActivity.class));
+
+
                 break;
 
         }

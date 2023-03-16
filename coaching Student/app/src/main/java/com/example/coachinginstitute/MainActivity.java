@@ -16,6 +16,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -30,6 +31,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
 
@@ -47,6 +50,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private final String CHECKEDITEM = "checked_item";
     private FirebaseAuth auth;
 
+    private DatabaseReference devicesRef;
+
+    private String userID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navigation_view);
+
+
 
         toggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.start,R.string.close);
 
@@ -216,4 +225,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         finish();
 
     }
+
 }

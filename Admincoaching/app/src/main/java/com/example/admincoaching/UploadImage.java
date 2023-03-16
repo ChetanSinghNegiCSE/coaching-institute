@@ -111,7 +111,7 @@ public class UploadImage extends AppCompatActivity {
 
     private void uploadImage() {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG,100,baos);
+        bitmap.compress(Bitmap.CompressFormat.JPEG,50,baos);
         /*bitmap.compress(Bitmap.CompressFormat.PNG,50,baos);*/
 
         byte[] finalimg = baos.toByteArray();

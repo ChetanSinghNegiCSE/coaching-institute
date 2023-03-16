@@ -38,13 +38,17 @@ public class LoginEmailActivity extends AppCompatActivity {
     private Button loginBtn;
     private String email, password;
     private FirebaseAuth auth;
-    private ImageView googleAuth,phoneAuth;
-    private DatabaseReference dbRef;
+
     private DatabaseReference reference;
     private static final int MAX_DEVICES = 1;
     private String mDeviceId;
 
     private ProgressBar progressBar;
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +59,9 @@ public class LoginEmailActivity extends AppCompatActivity {
         loginPass =findViewById(R.id.loginPass);
         loginBtn =findViewById(R.id.loginBtn);
         auth = FirebaseAuth.getInstance();
-
+        openForget =findViewById(R.id.openForget);
         progressBar = findViewById(R.id.progressBar);
+
 
         openReg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +76,22 @@ public class LoginEmailActivity extends AppCompatActivity {
                 validateData();
             }
         });
+
+        openForget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openForgetPassword();
+            }
+        });
+
+
+
+
+    }
+
+    private void openForgetPassword() {
+        startActivity(new Intent(LoginEmailActivity.this,ForgetPassActivity.class));
+
     }
 
     private void validateData() {
@@ -98,7 +119,7 @@ public class LoginEmailActivity extends AppCompatActivity {
                 /*FirebaseUser user = auth.getCurrentUser();
                 checkIfUserIsLoggedIn(user);*/
                     /* user.put("status","no");*/
-                    reference = FirebaseDatabase.getInstance().getReference().child("User").child(auth.getCurrentUser().getUid()).child("devices");
+                    reference = FirebaseDatabase.getInstance().getReference().child("CurrentAdminUser").child(auth.getCurrentUser().getUid()).child("devices");
                     mDeviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
                     reference.push().setValue(mDeviceId);
                     checkDeviceLimit();
@@ -124,12 +145,16 @@ public class LoginEmailActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int numDevices = (int) snapshot.getChildrenCount();
+
+
                 if (numDevices > MAX_DEVICES) {
                     // Limit exceeded, sign out the user and display an error message
+                    startActivity(new Intent(LoginEmailActivity.this,LoginEmailActivity.class));
+                    finish();
                     auth.signOut();
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(LoginEmailActivity.this, "Maximum number of devices reached.", Toast.LENGTH_SHORT).show();
-                }else {
+                    Toast.makeText(LoginEmailActivity.this, "Maximum number of devices reached Login again.", Toast.LENGTH_LONG).show();
+                }else  {
                     openMain();
                 }
             }
@@ -169,14 +194,18 @@ public class LoginEmailActivity extends AppCompatActivity {
 
 
     private void openMain() {
-        progressBar.setVisibility(View.GONE);
-        startActivity(new Intent(LoginEmailActivity.this, MainActivity.class));
+        startActivity(new Intent(LoginEmailActivity.this,PendingActivity.class));
         finish();
 
+
     }
+
+
 
     private void openRegister() {
         startActivity(new Intent(LoginEmailActivity.this,RegisterEmailActivity.class));
         finish();
     }
+
+
 }

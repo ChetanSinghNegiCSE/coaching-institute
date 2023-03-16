@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +34,8 @@ public class RegisterEmailActivity extends AppCompatActivity {
     private DatabaseReference dbRef;
     private TextView openLog;
 
+    private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,8 @@ public class RegisterEmailActivity extends AppCompatActivity {
         regPassword = findViewById(R.id.registerPass);
         register = findViewById(R.id.register);
         openLog = findViewById(R.id.openLog);
+
+        progressBar = findViewById(R.id.progressBar);
 
         auth = FirebaseAuth.getInstance();
         reference = FirebaseDatabase.getInstance().getReference();
@@ -101,6 +106,7 @@ public class RegisterEmailActivity extends AppCompatActivity {
     }
 
     private void createUser() {
+        progressBar.setVisibility(View.VISIBLE);
         auth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -110,12 +116,16 @@ public class RegisterEmailActivity extends AppCompatActivity {
                             uploadData();
 
                         }else {
+                            progressBar.setVisibility(View.GONE);
+
                             Toast.makeText(RegisterEmailActivity.this, "Error : "+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        progressBar.setVisibility(View.GONE);
+
                         Toast.makeText(RegisterEmailActivity.this, "Error : "+e.getMessage(), Toast.LENGTH_SHORT).show();
 
                     }
@@ -152,16 +162,21 @@ public class RegisterEmailActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             /*Toast.makeText(RegisterEmailActivity.this, "User Created", Toast.LENGTH_SHORT).show();
                             openMain();*/
+                            progressBar.setVisibility(View.GONE);
                             Toast.makeText(RegisterEmailActivity.this, "Your account is pending approval by an admin.", Toast.LENGTH_SHORT).show();
-                            openLogin();
+//                            openLogin();
+                            startActivity(new Intent(RegisterEmailActivity.this,PendingActivity.class));
+                            finish();
 
                         }else {
+                            progressBar.setVisibility(View.GONE);
                             Toast.makeText(RegisterEmailActivity.this, Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        progressBar.setVisibility(View.GONE);
                         Toast.makeText(RegisterEmailActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
