@@ -36,10 +36,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.HashMap;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 public class UploadPapers extends AppCompatActivity {
     private Spinner paperCategory; //imageCategory;
     private CardView addPreviousPaper;

@@ -15,14 +15,18 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".key.AddAnsKey"
+            android:exported="false" />
+        <activity
+            android:name=".key.UploadAnsKey"
+            android:exported="false" />
+        <activity
             android:name=".authentication.ForgetPassActivity"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".authentication.UserActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" /> <!-- set destination of actonBar back button -->
-
         <activity
             android:name=".authentication.PendingActivity"
             android:exported="true">

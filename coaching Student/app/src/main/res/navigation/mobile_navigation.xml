@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.coachinginstitute.ui.home.HomeFragment"
+        android:name="com.chetan.coachinginstitute.ui.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
 
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/navigation_notice"
-        android:name="com.example.coachinginstitute.ui.notice.NoticeFragment"
+        android:name="com.chetan.coachinginstitute.ui.notice.NoticeFragment"
         android:label="Notice"
         tools:layout="@layout/fragment_notice" />
 
@@ -35,17 +35,17 @@
 
     <fragment
         android:id="@+id/navigation_gallery"
-        android:name="com.example.coachinginstitute.ui.gallery.GalleryFragment"
+        android:name="com.chetan.coachinginstitute.ui.gallery.GalleryFragment"
         android:label="Gallery"
         tools:layout="@layout/fragment_gallery" />
     <fragment
         android:id="@+id/magazineFragment"
-        android:name="com.example.coachinginstitute.ui.magazine.MagazineFragment"
+        android:name="com.chetan.coachinginstitute.ui.magazine.MagazineFragment"
         android:label="fragment_magazine"
         tools:layout="@layout/fragment_magazine" />
     <fragment
         android:id="@+id/paperFragment"
-        android:name="com.example.coachinginstitute.ui.paper.PaperFragment"
+        android:name="com.chetan.coachinginstitute.ui.paper.PaperFragment"
         android:label="fragment_paper"
         tools:layout="@layout/fragment_paper" />
 

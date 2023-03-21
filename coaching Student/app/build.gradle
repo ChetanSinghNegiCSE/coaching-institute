@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace 'com.example.coachinginstitute'
+    namespace 'com.chetan.coachinginstitute'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.coachinginstitute"
-        minSdk 26
+        applicationId "com.chetan.coachinginstitute"
+        minSdk 25
         targetSdk 33
         versionCode 1
         versionName "1.0"

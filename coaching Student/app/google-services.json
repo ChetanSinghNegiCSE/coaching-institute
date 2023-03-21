@@ -8,6 +8,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:193043975462:android:3b9c739df4beb71f3245e7",
+        "android_client_info": {
+          "package_name": "com.chetan.coachinginstitute"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193043975462-694b4p9mvjkqf7g6dttlpevnpvv860f0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASKKwaW9j1ftYJVtwBbc89T4Ibyo5j7-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193043975462-694b4p9mvjkqf7g6dttlpevnpvv860f0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:193043975462:android:5e62fbf071364e593245e7",
         "android_client_info": {
           "package_name": "com.example.admincoaching"

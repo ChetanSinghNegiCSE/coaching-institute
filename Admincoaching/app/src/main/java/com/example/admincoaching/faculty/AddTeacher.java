@@ -33,10 +33,6 @@ import com.google.firebase.storage.UploadTask;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 public class AddTeacher extends AppCompatActivity {
 
     private ImageView addTeacherImage;

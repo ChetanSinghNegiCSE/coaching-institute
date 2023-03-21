@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/navigation_user"
         android:title="User"
-        android:icon="@drawable/idcard"/><!--
+        android:icon="@drawable/idcard"/>
 
-    <item android:id="@+id/navigation_magazine"
+    <!--<item android:id="@+id/navigation_magazine"
         android:title="Monthly Magazines"
-        android:icon="@drawable/book"/>
+        android:icon="@drawable/book"/>-->
 
-    <item android:id="@+id/navigation_paper"
-        android:title="Papers"
-        android:icon="@drawable/ic_exam"/>-->
+    <item android:id="@+id/navigation_ans"
+        android:title="Answer Key"
+        android:icon="@drawable/ic_exam"/>
 
     <item android:id="@+id/navigation_about"
         android:title="About"

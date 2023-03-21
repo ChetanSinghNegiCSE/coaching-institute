@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -14,8 +13,8 @@ import com.example.admincoaching.authentication.LoginEmailActivity;
 import com.example.admincoaching.authentication.PendingActivity;
 import com.example.admincoaching.authentication.UserActivity;
 import com.example.admincoaching.faculty.UpdateFaculty;
+import com.example.admincoaching.key.UploadAnsKey;
 import com.example.admincoaching.notice.DeleteNoticeActivity;
-import com.example.admincoaching.notification.NotificationActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -25,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    CardView UploadNotice , addGalleryImage , addEbook , faculty ,deleteNotice,addPapers , logOut, notification;
+    CardView UploadNotice , addGalleryImage , addEbook , faculty ,deleteNotice,addPapers , logOut, notification ,ansKey;
 
     /*private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;*/
@@ -56,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addPapers.setOnClickListener(this);
         logOut=findViewById(R.id.logOut);
         logOut.setOnClickListener(this);
+        ansKey=findViewById(R.id.Answer);
+        ansKey.setOnClickListener(this);
         /*notification=findViewById(R.id.notification);*/
         /*notification.setOnClickListener(this);*/
 
@@ -162,6 +163,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.addPapers:
                 intent=new Intent(MainActivity.this, UploadPapers.class);
+                startActivity(intent);
+                break;
+
+            case R.id.Answer:
+                intent=new Intent(MainActivity.this, UploadAnsKey.class);
                 startActivity(intent);
                 break;
 
