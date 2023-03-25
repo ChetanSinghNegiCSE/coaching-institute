@@ -56,8 +56,8 @@ public class UserActivity extends AppCompatActivity {
             logout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String deviceID = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-                    devicesRef.child(deviceID).removeValue();
+                    /*String deviceID = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+                    devicesRef.child(deviceID).removeValue();*/
                     auth.signOut();
                     startActivity(new Intent(UserActivity.this, LoginEmailActivity.class));
                     finish();

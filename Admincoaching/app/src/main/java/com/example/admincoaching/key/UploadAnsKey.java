@@ -43,7 +43,7 @@ public class UploadAnsKey extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_ans_key);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //back button in action bar
-        getSupportActionBar().setTitle("Papers"); //SetTitle in Action bar
+        getSupportActionBar().setTitle("Answer Key"); //SetTitle in Action bar
         ebookRecycler1 = findViewById(R.id.ebookRecycler1);
         ebookRecycler2 = findViewById(R.id.ebookRecycler2);
         ebookRecycler3 = findViewById(R.id.ebookRecycler3);

@@ -120,10 +120,10 @@ public class LoginEmailActivity extends AppCompatActivity {
                     reference = FirebaseDatabase.getInstance().getReference().child("CurrentAdminUser").child(auth.getCurrentUser().getUid()).child("devices");
                     mDeviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
                     reference.push().setValue(mDeviceId);
-                    checkDeviceLimit();
+                    /*checkDeviceLimit();*/
 
 
-                    //openMain();
+                    openMain();
                 }else {
                     progressBar.setVisibility(View.GONE);
                     Toast.makeText(LoginEmailActivity.this, "Error"+ Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_LONG).show();
