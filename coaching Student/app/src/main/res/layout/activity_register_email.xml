@@ -24,7 +24,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="325dp"
-                    android:background="@color/design_default_color_primary"
+                    android:background="#0048A4"
                     android:orientation="vertical"
                     android:padding="50dp">
 
@@ -170,5 +170,11 @@
         </ScrollView>
 
     </RelativeLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

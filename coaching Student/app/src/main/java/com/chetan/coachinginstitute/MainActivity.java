@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.chetan.coachinginstitute.about.AboutActivity;
 import com.chetan.coachinginstitute.authentication.LoginEmailActivity;
+import com.chetan.coachinginstitute.authentication.PendingActivity;
 import com.chetan.coachinginstitute.authentication.UserActivity;
 import com.chetan.coachinginstitute.faculty.FacultyActivity;
 import com.chetan.coachinginstitute.notification.NotificationActivity;
@@ -29,7 +30,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
@@ -51,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private String userID;
 
+    private DatabaseReference usersRef;
+    private FirebaseUser currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +70,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navigation_view);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        usersRef = database.getReference("Students");
+
 
 
 
@@ -210,11 +223,63 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onStart() {
         super.onStart();
-            if(auth.getCurrentUser() == null){
+        if(auth.getCurrentUser() == null){
             openLogin();
+        }else {
+            checkUser();
+        }
+        }
+
+    private void checkUser() {
+        currentUser = auth.getCurrentUser();
+        if (currentUser == null) {
+            // User is not signed in, redirect to login screen
+            startActivity(new Intent(MainActivity.this, LoginEmailActivity.class));
             finish();
+        } else {
+// Get the current user's ID
+            String userId = auth.getCurrentUser().getUid();
+
+// Get a reference to the current user's status in the Realtime Database
+            DatabaseReference statusRef = usersRef.child(userId).child("status");
+
+// Check if the user's status is "Approved"
+            statusRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    String status = dataSnapshot.getValue(String.class);
+                    if (status == null) {
+                        // Status is null, display an error message and log the user out
+                        Toast.makeText(MainActivity.this, "Your account status is not defined. Please contact an admin.", Toast.LENGTH_SHORT).show();
+                        openLogin();
+                    } else if (status.equals("1")) {
+                        // Allow the user to access the app
+                        Toast.makeText(MainActivity.this, "Welcome  ", Toast.LENGTH_SHORT).show();
+
+                    } else if (status.equals("0")) {
+                        // Redirect the user to a "pending approval" screen
+                        Toast.makeText(MainActivity.this, "you are Not a verified user", Toast.LENGTH_SHORT).show();
+                        /*openLogin();*/
+                        auth.signOut();
+                        startActivity(new Intent(MainActivity.this, PendingActivity.class));
+                        finish();
+
+                    } else {
+                        // Display an error message and log the user out
+                        Toast.makeText(MainActivity.this, "Your account has been disabled. Please contact an super admin.", Toast.LENGTH_SHORT).show();
+                        openLogin();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    // Handle database errors
+                }
+            });
         }
     }
+
+
 
     private void openLogin() {
 

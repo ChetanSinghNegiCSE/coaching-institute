@@ -1,4 +1,4 @@
-package com.chetan.coachinginstitute.authentication;
+package com.example.admincoaching.authentication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,8 +12,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.chetan.coachinginstitute.MainActivity;
-import com.chetan.coachinginstitute.R;
+import com.example.admincoaching.MainActivity;
+import com.example.admincoaching.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -23,11 +23,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.HashMap;
 import java.util.Objects;
 
-public class RegisterEmailActivity extends AppCompatActivity {
-    private EditText  regName,regEmail ,regPassword;
+public class AddUser extends AppCompatActivity {
+    private EditText  regEmail ,regPassword;
     private Button register;
     private String name,email,password;
     private FirebaseAuth auth;
@@ -40,8 +39,8 @@ public class RegisterEmailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_email);
-        regName =findViewById(R.id.registerName);
+        setContentView(R.layout.activity_add_user);
+        /*regName =findViewById(R.id.registerName);*/
         regEmail = findViewById(R.id.registerEmail);
         regPassword = findViewById(R.id.registerPass);
         register = findViewById(R.id.register);
@@ -69,7 +68,7 @@ public class RegisterEmailActivity extends AppCompatActivity {
     }
 
     private void openLogin() {
-        startActivity(new Intent(RegisterEmailActivity.this,LoginEmailActivity.class));
+        startActivity(new Intent(AddUser.this,MainActivity.class));
         finish();
     }
 
@@ -87,14 +86,14 @@ public class RegisterEmailActivity extends AppCompatActivity {
     }*/
 
     private void validateData() {
-        name= regName.getText().toString();
+        /*name= regName.getText().toString();*/
         email= regEmail.getText().toString();
         password= regPassword.getText().toString();
 
-        if(name.isEmpty()){
+       /* if(name.isEmpty()){
             regName.setError("Fill name");
             regName.requestFocus();
-        }else if(email.isEmpty()){
+        }else*/ if(email.isEmpty()){
             regEmail.setError("Fill Email");
             regEmail.requestFocus();
         } else if(password.isEmpty()){
@@ -118,7 +117,7 @@ public class RegisterEmailActivity extends AppCompatActivity {
                         }else {
                             progressBar.setVisibility(View.GONE);
 
-                            Toast.makeText(RegisterEmailActivity.this, "Error : "+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AddUser.this, "Error : "+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -126,7 +125,7 @@ public class RegisterEmailActivity extends AppCompatActivity {
                     public void onFailure(@NonNull Exception e) {
                         progressBar.setVisibility(View.GONE);
 
-                        Toast.makeText(RegisterEmailActivity.this, "Error : "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddUser.this, "Error : "+e.getMessage(), Toast.LENGTH_SHORT).show();
 
                     }
                 });
@@ -149,8 +148,7 @@ public class RegisterEmailActivity extends AppCompatActivity {
         assert user != null;
         String userId = user.getUid();
         dbRef = FirebaseDatabase.getInstance().getReference("Students").child(userId);
-        dbRef.child("Email").setValue(email);
-        dbRef.child("Name").setValue(name);
+        dbRef.child("email").setValue(email);
         dbRef.child("status").setValue("0");
         String key = dbRef.push().getKey();
 
@@ -164,20 +162,20 @@ public class RegisterEmailActivity extends AppCompatActivity {
                             /*Toast.makeText(RegisterEmailActivity.this, "User Created", Toast.LENGTH_SHORT).show();
                             openMain();*/
                             progressBar.setVisibility(View.GONE);
-                            Toast.makeText(RegisterEmailActivity.this, " account Created  pending approval by an admin.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(RegisterEmailActivity.this,LoginEmailActivity.class));
+                            Toast.makeText(AddUser.this, " account Created  pending approval by an admin.", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(AddUser.this,AddUser.class));
                             finish();
 
                         }else {
                             progressBar.setVisibility(View.GONE);
-                            Toast.makeText(RegisterEmailActivity.this, Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AddUser.this, Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         progressBar.setVisibility(View.GONE);
-                        Toast.makeText(RegisterEmailActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddUser.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }

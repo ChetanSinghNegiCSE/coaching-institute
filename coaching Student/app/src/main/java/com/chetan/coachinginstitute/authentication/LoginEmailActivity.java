@@ -36,7 +36,7 @@ public class LoginEmailActivity extends AppCompatActivity {
 
     private DatabaseReference dbRef;
     private DatabaseReference reference;
-    private static final int MAX_DEVICES = 1;
+    private static final int MAX_DEVICES = 2;
     private String mDeviceId;
 
     private ProgressBar progressBar;
@@ -47,7 +47,7 @@ public class LoginEmailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login_email);
 
 
-//        openReg =findViewById(R.id.openReg);
+        openReg =findViewById(R.id.openReg);
         loginEmail =findViewById(R.id.loginEmail);
         loginPass =findViewById(R.id.loginPass);
         loginBtn =findViewById(R.id.loginBtn);
@@ -56,12 +56,12 @@ public class LoginEmailActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
         auth = FirebaseAuth.getInstance();
-        /*openReg.setOnClickListener(new View.OnClickListener() {
+        openReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openRegister();
             }
-        });*/
+        });
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,7 +110,9 @@ public class LoginEmailActivity extends AppCompatActivity {
 
                     reference = FirebaseDatabase.getInstance().getReference().child("CurrentUser").child(auth.getCurrentUser().getUid()).child("devices");
                     mDeviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+                    reference.child("Email").setValue(email);
                     reference.push().setValue(mDeviceId);
+
                     checkDeviceLimit();
 
 
@@ -183,16 +185,16 @@ public class LoginEmailActivity extends AppCompatActivity {
 
 
     private void openMain() {
-        startActivity(new Intent(LoginEmailActivity.this, MainActivity.class));
+        startActivity(new Intent(LoginEmailActivity.this, PendingActivity.class));
         progressBar.setVisibility(View.GONE);
         finish();
 
     }
 
-   /* private void openRegister() {
+    private void openRegister() {
         startActivity(new Intent(LoginEmailActivity.this,RegisterEmailActivity.class));
-        finish();
-    }*/
+
+    }
 
     @Override
     public void onBackPressed() {

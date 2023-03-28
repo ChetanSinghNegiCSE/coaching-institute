@@ -15,8 +15,13 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".authentication.PendingActivity"
+            android:exported="false"
+            />
+
+        <activity
             android:name=".splash"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -75,11 +80,15 @@
         <activity
             android:name=".MainActivity"
             android:exported="false">
-            <!--<intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>--> <!-- Main -->
+            </intent-filter>
+            -->
+            <!-- Main -->
         </activity>
 
         <service

@@ -1,10 +1,11 @@
-package com.example.admincoaching.authentication;
+package com.chetan.coachinginstitute.authentication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,8 +13,8 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.admincoaching.MainActivity;
-import com.example.admincoaching.R;
+import com.chetan.coachinginstitute.MainActivity;
+import com.chetan.coachinginstitute.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -33,15 +34,10 @@ public class PendingActivity extends AppCompatActivity {
 
     private Button button;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pending);
-
         progressBar = findViewById(R.id.progressBar);
         imageView = findViewById(R.id.gifView);
         button = findViewById(R.id.materialButton);
@@ -50,7 +46,7 @@ public class PendingActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        usersRef = database.getReference("users");
+        usersRef = database.getReference("Students");
         currentUser = auth.getCurrentUser();
 
         Glide.with(this)
@@ -84,15 +80,16 @@ public class PendingActivity extends AppCompatActivity {
                         startActivity(new Intent(PendingActivity.this, LoginEmailActivity.class));
                         finish();
 
-                    } else if (status.equals("yes")) {
+                    } else if (status.equals("1")) {
+
                         // Allow the user to access the app
-                        Toast.makeText(PendingActivity.this, "Welcome Admin ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PendingActivity.this, "Welcome  ", Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.GONE);
                         startActivity(new Intent(PendingActivity.this, MainActivity.class));
                         finish();
 
-                    } else if (status.equals("no")) {
-                        /*progressBar.setVisibility(View.GONE);*/
+                    } else if (status.equals("0")) {
+
                         // Redirect the user to a "pending approval" screen
                         Toast.makeText(PendingActivity.this, "you are Not a verified user ", Toast.LENGTH_SHORT).show();
 
@@ -122,6 +119,7 @@ public class PendingActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
 }

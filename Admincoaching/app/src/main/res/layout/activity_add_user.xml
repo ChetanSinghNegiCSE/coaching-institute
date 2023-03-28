@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".authentication.LoginEmailActivity">
-
+    tools:context=".authentication.AddUser">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,10 +30,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Student"
+                        android:text="Register "
                         android:textColor="@color/white"
                         android:textSize="22sp"
-                        android:fontFamily="@font/hind_regular"
                         android:textStyle="bold"
                         android:layout_marginTop="-5dp"
                         android:layout_gravity="center_horizontal"/>
@@ -45,19 +43,18 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Pehli Manzil"
+                        android:text="Student"
                         android:textColor="@color/white"
                         android:textSize="25dp"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold"
-                        android:fontFamily="@font/hind_regular"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center"/>
 
                     <View
                         android:layout_width="80dp"
                         android:layout_height="4dp"
-                        android:background="@color/grey2"
+                        android:background="@color/lightGray"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="22dp"/>
 
@@ -83,15 +80,27 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Login"
+                            android:text="Register"
                             android:textSize="22dp"
                             android:textStyle="bold"
-                            android:fontFamily="@font/poppins_bold"
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="16dp"
                             />
 
 
+                        <!--<com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Name"
+                                android:inputType="text"
+                                android:id="@+id/registerName"/>
+                        </com.google.android.material.textfield.TextInputLayout>-->
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -104,7 +113,7 @@
                                 android:layout_height="wrap_content"
                                 android:hint="Email"
                                 android:inputType="textEmailAddress"
-                                android:id="@+id/loginEmail"/>
+                                android:id="@+id/registerEmail"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
@@ -118,7 +127,7 @@
                                 android:layout_height="wrap_content"
                                 android:hint="Password"
                                 android:inputType="textPassword"
-                                android:id="@+id/loginPass"/>
+                                android:id="@+id/registerPass"/>
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <LinearLayout
@@ -129,26 +138,17 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Not yet registered"/>
+                                android:text="Back to Home Screen"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Register hear"
+                                android:text="Home"
                                 android:layout_marginLeft="8dp"
-                                android:id="@+id/openReg"
+                                android:id="@+id/openLog"
                                 android:textColor="#0048A4"/>
 
                         </LinearLayout>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Forget Password ?"
-                            android:layout_marginTop="5dp"
-                            android:id="@+id/openForget"
-                            android:textColor="#0048A4"/>
-
 
                     </LinearLayout>
 
@@ -157,40 +157,12 @@
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Login"
-                    android:id="@+id/loginBtn"
+                    android:text="Register"
+                    android:id="@+id/register"
                     android:layout_marginHorizontal="24dp"/>
-
-                <!--<LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal"
-                    android:weightSum="2"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center_horizontal">
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/common_google_signin_btn_icon_dark"
-                        android:layout_marginRight="45dp"
-                        android:id="@+id/googleAuth"/>
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/phone"
-
-                        android:id="@+id/phoneAuth"/>
-
-
-
-
-                </LinearLayout>-->
 
 
             </LinearLayout>
-
         </ScrollView>
 
         <ProgressBar
@@ -200,8 +172,5 @@
             android:layout_centerInParent="true"
             android:visibility="gone"/>
 
-
     </RelativeLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

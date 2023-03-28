@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.chetan.coachinginstitute.authentication.PendingActivity;
+
 public class splash extends AppCompatActivity {
 
     @Override
@@ -20,7 +22,7 @@ public class splash extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent Main = new Intent(splash.this, MainActivity.class);
+                Intent Main = new Intent(splash.this, PendingActivity.class);
                 startActivity(Main);
                 finish();
             }

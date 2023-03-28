@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.admincoaching.authentication.AddUser;
 import com.example.admincoaching.authentication.LoginEmailActivity;
 import com.example.admincoaching.authentication.PendingActivity;
 import com.example.admincoaching.authentication.UserActivity;
@@ -24,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    CardView UploadNotice , addGalleryImage , addEbook , faculty ,deleteNotice,addPapers , logOut, notification ,ansKey;
+    CardView UploadNotice , addGalleryImage , addEbook , faculty ,deleteNotice,addPapers , logOut, addUser ,ansKey;
 
     /*private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;*/
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         logOut.setOnClickListener(this);
         ansKey=findViewById(R.id.Answer);
         ansKey.setOnClickListener(this);
+        addUser=findViewById(R.id.Stu);
+        addUser.setOnClickListener(this);
         /*notification=findViewById(R.id.notification);*/
         /*notification.setOnClickListener(this);*/
 
@@ -169,6 +172,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.Answer:
                 intent=new Intent(MainActivity.this, UploadAnsKey.class);
                 startActivity(intent);
+                break;
+
+            case R.id.Stu:
+                intent=new Intent(MainActivity.this, AddUser.class);
+                startActivity(intent);
+
                 break;
 
 
