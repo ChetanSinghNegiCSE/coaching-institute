@@ -34,6 +34,8 @@ public class PendingActivity extends AppCompatActivity {
 
     private Button button;
 
+    private DatabaseReference devicesRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,7 @@ public class PendingActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         usersRef = database.getReference("Students");
         currentUser = auth.getCurrentUser();
+
 
         Glide.with(this)
                 .asGif()
@@ -113,6 +116,11 @@ public class PendingActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String userID = auth.getCurrentUser().getUid();
+                devicesRef = FirebaseDatabase.getInstance().getReference().child("CurrentUser").child(userID).child("devices");
+
+                String deviceID = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+                devicesRef.child(deviceID).removeValue();
                 auth.signOut();
                 startActivity(new Intent(PendingActivity.this, LoginEmailActivity.class));
                 finish();

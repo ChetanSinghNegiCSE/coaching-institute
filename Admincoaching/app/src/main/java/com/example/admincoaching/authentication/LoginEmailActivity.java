@@ -138,7 +138,7 @@ public class LoginEmailActivity extends AppCompatActivity {
         });
     }
 
-    private void checkDeviceLimit() {
+  /*  private void checkDeviceLimit() {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -185,7 +185,7 @@ public class LoginEmailActivity extends AppCompatActivity {
                 });
             }
         });
-    }
+    }*/
 
 
 
