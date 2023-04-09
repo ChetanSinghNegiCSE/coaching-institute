@@ -38,6 +38,7 @@
                 android:layout_marginTop="@dimen/text_margin"
                 android:layout_marginHorizontal="@dimen/text_margin"
                 android:textSize="@dimen/text_size3"
+                android:justificationMode="inter_word"
                 android:layout_gravity="center_horizontal"
 
                 android:fontFamily="@font/hind_regular"/>

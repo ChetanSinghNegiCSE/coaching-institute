@@ -48,6 +48,7 @@
             android:text="@string/about_us"
             android:layout_marginHorizontal="@dimen/text_margin"
             android:textSize="14dp"
+            android:justificationMode="inter_word"
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/hind_light"/>
 
